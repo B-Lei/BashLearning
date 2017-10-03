@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+# FUNCTION: List all .txt files in the current directory.
+# NOTES: 
+#   "sed" is the stream editor command.
+#   To find a word and replace all instances of it, use sed 's/OLD/NEW/'.
+#   By regex standards, "^" denotes the beginning of the stream. It is replaced with 4 spaces.
 
 echo "Listing contents of .txt files in current directory:"
-
-# NOTE: "sed" is the stream editor command.
-# To find a word and replace all instances of it, use sed 's/OLD/NEW/'.
-# By regex standards, "^" denotes the beginning of the stream. It is replaced with 4 spaces.
 
 for file in *.txt
 do

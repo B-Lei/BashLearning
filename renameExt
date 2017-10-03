@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
+# FUNCTION: Change all file extensions from ORIG_EXT to NEW_EXT.
+# NOTES:
+#   In the conditional below, "1> /dev/null 2>&1" removes the output of the ls check.
+#   "1> /dev/null" redirects the standard output (1) to /dev/null, which discards it.
+#   "2>&1" redirects standard error (2) to standard output (1), which also discards it
+#       (because standard output has already been redirected to /dev/null).
+
 ORIG_EXT="$1"
 NEW_EXT="$2"
 
 printf "Changing all files with extension of $ORIG_EXT to $NEW_EXT...\n"
-
-# NOTE: In the conditional below, "1> /dev/null 2>&1" removes the output of the ls check.
-# "1> /dev/null" redirects the standard output (1) to /dev/null, which discards it.
-# "2>&1" redirects standard error (2) to standard output (1), which also discards it
-#   (because standard output has already been redirected to /dev/null).
 
 if ls *".$ORIG_EXT" 1> /dev/null 2>&1; then
     printf "ORIGINAL:\t"
