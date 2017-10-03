@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# FUNCTION: Performs a grep using a supplied argument.
+# FUNCTION: Returns a list of files containing the supplied argument.
 # NOTES:
 #   The "-l" option makes grep print only the matching filenames.
 

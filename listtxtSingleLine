@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# FUNCTION: Same as listall, but done in a single line.
+# FUNCTION: Same as listtxt, but done in a single line.
 
 echo "Listing all .txt files in the directory, using one line:"; for file in *.txt; do echo "$file"; cat "$file" | sed "s/^/    /"; done
