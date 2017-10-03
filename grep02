@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+printf "Number of files containing the argument you entered:"
+
+# NOTE: "|" pipes the output of grep into wc.
+# "wc" is word count, "wc -l" is line count.
+# "grep -l" lists matching files by line, so you can simply count the number of lines.
+
+grep -l ${1} * | wc -l

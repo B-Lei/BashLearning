@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+echo 'Listing all files containing the argument you entered:'
+
+# NOTE: The "-l" option makes grep print only the matching filenames.
+
+grep -l ${1} *

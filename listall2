@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# NOTE: this is the same as listall, except done in a single line.
+
+echo "Listing all .txt files in the directory, using one line:"; for file in *.txt; do echo "$file"; cat "$file" | sed "s/^/    /"; done
