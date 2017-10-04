@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# FUNCTION: Delete all the files created by massTouch.
+
+rm file*
