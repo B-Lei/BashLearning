@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # FUNCTION: List all filenames containing the supplied argument.
-# NOTES:
-#   "-1" option displays only the filename. To include . files, use "-1a".
 
-ls -1 | grep ${1}
+ls | grep ${1}

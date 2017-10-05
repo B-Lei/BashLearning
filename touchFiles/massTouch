@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# FUNCTION: Creates 100 files using touch, writing the number n to each nth file.
-
-for i in {1..10}
-do
-    touch file${i}.txt
-    echo "I'm number ${i}" >> "file${i}.txt"
-done

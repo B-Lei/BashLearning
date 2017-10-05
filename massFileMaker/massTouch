@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# FUNCTION: Creates n files using touch, writing the nth number to each nth file.
+
+for ((i=0; i<$1; i++)); do
+    echo "I'm number ${i}" > "file${i}.txt"
+done

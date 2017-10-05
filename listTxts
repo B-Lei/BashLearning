@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-# FUNCTION: List all .txt files in the current directory.
+# FUNCTION: List first 5 lines of all .txt files in the current directory.
 # NOTES: 
 #   "sed" is the stream editor command.
 #   To find a word and replace all instances of it, use sed 's/OLD/NEW/'.
 #   By regex standards, "^" denotes the beginning of the stream. It is replaced with 4 spaces.
 
-echo "Listing contents of .txt files in current directory:"
+echo "Listing first 5 lines of all .txt files in current directory:"
 
 for file in *.txt
 do
     echo "$file:"
-    cat $file | sed 's/^/    /'
+    head -5 $file | sed 's/^/    /'
 done

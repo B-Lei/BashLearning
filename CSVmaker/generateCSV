@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# FUNCTION: Creates a random CSV of N entries with M columns.
+# NOTES:
+#   The "-n" flag in echo removes the newline trait. "-e" enables backslash escapes.
+
+# Initialization
+N="$1"
+M="$2"
+touch data${N}by${M}.csv
+FILE=data${N}by${M}.csv
+
+# Conditionally add comma for row number $1 out of $2
+conditionally_add_comma() {
+    if (($1 < $2-1)); then
+        echo -en "," >> ${FILE}
+    fi
+}
+
+# Add a newline
+add_newline() {
+    echo "" >> ${FILE}
+}
+
+# Row creation function - generate a row with values starting from $1, of size $2
+generate_row() {
+    END=$(($1+$2))
+    for ((i=$1; i<END; i++)); do
+        echo -en "${i}" >> ${FILE}
+        conditionally_add_comma $i $END
+    done
+    add_newline
+}
+
+# Creates header
+for ((i=0; i<M; i++)); do
+    echo -en "cat${i}" >> ${FILE}
+    conditionally_add_comma $i $M
+done
+add_newline
+
+# Create actual data
+for ((j=0; j< N; j++)); do
+    generate_row $j $M
+done

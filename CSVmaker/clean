@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# FUNCTION: Removes all .csv files.
+
+rm *.csv
