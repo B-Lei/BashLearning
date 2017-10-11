@@ -1,6 +1,3 @@
-# ScriptPractice
-Shell and Python scripts created for the sake of learning!
-
 # Scripts Contained
 * __CSVmaker/extractLines__: Extract specific lines of an input file (Shell x2)
   * extractLines: uses top and head. Slower method.
