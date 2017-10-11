@@ -27,8 +27,6 @@ def main():
         reg_expr += ".*,"
     reg_expr = reg_expr[:-1]
 
-    print "Regular expression used: ", reg_expr    
-
     # Check the column value in each row
     current_value = 0
     for line in file:
