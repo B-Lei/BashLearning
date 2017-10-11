@@ -1,0 +1,27 @@
+#!/usr/bin/python
+# FUNCTION: Finds the number of files containing the given string in given path, using Python.
+# NOTES:
+#   You need to join (root, filename) to open using the absolute path.
+#   Trying to open just the filename (relative path) doesn't work for things
+#   outside of the current directory.
+
+import sys
+import os
+
+def numFilesContaining(findString, path):
+    numMatches = 0
+    for root, dirs, files in os.walk(path):
+        for filename in files:
+            with open(os.path.join(root, filename), 'r') as currentFile:
+                for line in currentFile:
+                    if findString in line:
+                        numMatches += 1
+                        break
+    return numMatches
+
+def main():
+    stringToFind = sys.argv[1]
+    path = sys.argv[2]
+    print numFilesContaining(stringToFind, path)
+
+main()
